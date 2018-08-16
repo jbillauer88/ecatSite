@@ -17,6 +17,7 @@
     <% if user_signed_in? %>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'New Sample', new_sample_path %></li>
+        <li><%= link_to 'All Samples', samples_path %></li>
         <li><%= link_to 'About', about_path %></li>
         <li><%= link_to 'FAQ', faq_path %></li>
         <li><%= link_to 'Contact', contact_path %></li>
@@ -33,6 +34,7 @@
       </ul>
       <% else %>
         <ul class="nav navbar-nav pull-right">
+          <li><%= link_to 'All Samples', samples_path %></li>
           <li><%= link_to 'About', about_path %></li>
           <li><%= link_to 'FAQ', faq_path %></li>
           <li><%= link_to 'Contact', contact_path %></li>
