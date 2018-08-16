@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>EcatSite</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>ECAT Sample Site</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
+<body>
+<header class="navbar navbar-default" role="navigation">
+  <div class="navbar-inner">
+    <div class="container">
+      <div id="logo" class="navbar-brand"><%= link_to "ECAT Sample Site", root_path %></div>
+      <nav class="collapse navbar-collapse navbar-ex1-collapse">
 
     <% if user_signed_in? %>
-      <ul>
+      <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'New Sample', new_sample_path %></li>
         <li><%= link_to 'Account', edit_user_registration_path %></li>
         <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
       </ul>
       <% else %>
-        <ul>
+        <ul class="nav navbar-nav pull-right">
           <li><%= link_to 'Register', new_user_registration_path %></li>
           <li><%= link_to 'Login', new_user_session_path %></li>
         </ul>
     <% end %>
 
-    <%= yield %>
-  </body>
+  </nav>
+    </div>
+  </div>
+</header>
+
+  <div id="main_content" class="container">
+      <%= yield %>
+  </div>
+  		</div>
+  	</div>
+</body>
 </html>

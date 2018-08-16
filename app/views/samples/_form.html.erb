@@ -11,57 +11,57 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :audioFile %>
-    <%= form.text_field :audioFile %>
+    <%= form.text_field :audioFile, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :latitude %>
-    <%= form.text_field :latitude %>
+    <%= form.text_field :latitude, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :longitude %>
-    <%= form.text_field :longitude %>
+    <%= form.text_field :longitude, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :locPhoto %>
-    <%= form.text_field :locPhoto %>
+    <%= form.text_field :locPhoto, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :temperature %>
-    <%= form.text_field :temperature %>
+    <%= form.text_field :temperature, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :altitude %>
-    <%= form.text_field :altitude %>
+    <%= form.text_field :altitude, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :gain %>
-    <%= form.number_field :gain %>
+    <%= form.number_field :gain, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :recDevice %>
-    <%= form.text_field :recDevice %>
+    <%= form.text_field :recDevice, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :addNotes %>
-    <%= form.text_area :addNotes %>
+    <%= form.text_area :addNotes, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Submit", class: "btn btn-lg btn-primary" %>
   </div>
 <% end %>

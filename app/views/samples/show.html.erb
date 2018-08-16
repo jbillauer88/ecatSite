@@ -1,56 +1,49 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-header">
+        <h5>Submitted By:</h5>
+      </div>
+      <img class="card-img-top" src=".../100px180/?text=Image cap" alt="User Profile Photo">
+      <div class="card-body">
+        <h5 class="card-title">Username</h5>
+        <p class="card-text"><strong>Bio: </strong>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+        <a class="btn btn-primary" href="#" role="button">View User Profile</a>
+        <a class="btn btn-info" href="#" role="button">Contact User</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-8">
+    <div class="card">
+      <div class="card-header">
+        <h5><strong>Name:</strong> <%= @sample.name %></h5>
+      </div>
+      <img class="card-img-top" src=".../100px180/?text=Image cap" alt="<%= @sample.locPhoto %>">
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>Audiofile:</strong> <%= @sample.audioFile %></li>
+          <li class="list-group-item"><strong>Latitude:</strong> <%= @sample.latitude %></li>
+          <li class="list-group-item"><strong>Longitude:</strong> <%= @sample.longitude %></li>
+          <li class="list-group-item"><strong>Temperature:</strong> <%= @sample.temperature %></li>
+          <li class="list-group-item"><strong>Altitude:</strong> <%= @sample.altitude %></li>
+          <li class="list-group-item"><strong>Gain:</strong> <%= @sample.gain %></li>
+          <li class="list-group-item"><strong>Recording Device:</strong> <%= @sample.recDevice %></li>
+          <li class="list-group-item"><strong>Additional Notes:</strong> <%= @sample.addNotes %></li>
+        </ul>
+        <a class="btn btn-primary" <%= link_to 'Back', samples_path %></a>
+        <% if @sample.user == current_user %>
+          <a class="btn btn-warning" <%= link_to 'Edit', edit_sample_path(@sample) %></a>
+          <a class="btn btn-danger" <%= link_to 'Delete', @sample, method: :delete, data: { confirm: 'Are you sure?' } %></a>
+        <% end %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @sample.name %>
-</p>
 
-<p>
-  <strong>Audiofile:</strong>
-  <%= @sample.audioFile %>
-</p>
-
-<p>
-  <strong>Latitude:</strong>
-  <%= @sample.latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @sample.longitude %>
-</p>
-
-<p>
-  <strong>Locphoto:</strong>
-  <%= @sample.locPhoto %>
-</p>
-
-<p>
-  <strong>Temperature:</strong>
-  <%= @sample.temperature %>
-</p>
-
-<p>
-  <strong>Altitude:</strong>
-  <%= @sample.altitude %>
-</p>
-
-<p>
-  <strong>Gain:</strong>
-  <%= @sample.gain %>
-</p>
-
-<p>
-  <strong>Recdevice:</strong>
-  <%= @sample.recDevice %>
-</p>
-
-<p>
-  <strong>Addnotes:</strong>
-  <%= @sample.addNotes %>
-</p>
-
-<% if @sample.user == current_user %>
-  <%= link_to 'Edit', edit_sample_path(@sample) %> |
-<% end %>
-<%= link_to 'Back', samples_path %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

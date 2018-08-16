@@ -1,43 +1,41 @@
-<p id="notice"><%= notice %></p>
+<h1>Recent Samples</h1>
 
-<h1>Samples</h1>
-
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Audiofile</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th>Locphoto</th>
-      <th>Temperature</th>
-      <th>Altitude</th>
-      <th>Gain</th>
-      <th>Recdevice</th>
-      <th>Addnotes</th>
+      <th scope="col">Name</th>
+      <th scope="col">Sample</th>
+      <th scope="col">Latitude</th>
+      <th scope="col">Longitude</th>
+      <th scope="col">Photo</th>
+      <th scope="col">Temperature</th>
+      <th scope="col">Altitude</th>
+      <th scope="col">Gain</th>
+      <th scope="col">Recording Device</th>
+      <th scope="col">Additional Notes</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @samples.each do |sample| %>
-      <tr>
-        <td><%= sample.name %></td>
-        <td><%= sample.audioFile %></td>
-        <td><%= sample.latitude %></td>
-        <td><%= sample.longitude %></td>
-        <td><%= sample.locPhoto %></td>
-        <td><%= sample.temperature %></td>
-        <td><%= sample.altitude %></td>
-        <td><%= sample.gain %></td>
-        <td><%= sample.recDevice %></td>
-        <td><%= sample.addNotes %></td>
-        <td><%= link_to 'Show', sample %></td>
-        <% if sample.user == current_user %>
-          <td><%= link_to 'Edit', edit_sample_path(sample) %></td>
-          <td><%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
+    <tr>
+      <td><%= sample.name %></td>
+      <td><%= sample.audioFile %></td>
+      <td><%= sample.latitude %></td>
+      <td><%= sample.longitude %></td>
+      <td><%= sample.locPhoto %></td>
+      <td><%= sample.temperature %></td>
+      <td><%= sample.altitude %></td>
+      <td><%= sample.gain %></td>
+      <td><%= sample.recDevice %></td>
+      <td><%= sample.addNotes %></td>
+      <td><%= link_to 'Show', sample %></td>
+      <% if sample.user == current_user %>
+        <td><%= link_to 'Edit', edit_sample_path(sample) %></td>
+        <td><%= link_to 'Delete', sample, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tr>
+  <% end %>
+    </tr>
   </tbody>
 </table>
